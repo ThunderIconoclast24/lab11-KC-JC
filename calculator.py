@@ -51,5 +51,7 @@ def multiply(a, b): a*b
 
 def logarithm(a,b):raise ValueError if b<=0 or b==1 or a<=0 else math.log(a,b)
 def exponent(a,b):a**b
+def square_root(a): raise ValueError if a <0  else math.sqrt(a)
+def hypotenuse(a,b): math.hypot(a,b)
 
 
