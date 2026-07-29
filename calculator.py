@@ -6,6 +6,17 @@ calculator.py
 One function per operation, in order.
 """
 #Partner 2 functions
+def square_root(a):
+    try:
+        return math.sqrt(a)
+        if a<0:
+            raise ValueError
+    except ValueError:
+        print("Error")
+def hypotenuse(a,b):
+    return math.hypot(a,b)
+
+
 def add(a:float, b:float):
     return a + b
 def sub(a:float, b:float):
@@ -14,24 +25,22 @@ def mul(a:float, b:float):
     return a * b
 def div(a:float, b:float):
     try:
-        return b / a
-        raise ZeroDivisionError if a == 0
+
+        raise ZeroDivisionError if a == 0 else b / a
     except ZeroDivisionError:
         print("Error")
 def log(a:float, b:float):
     try:
-        return math.log(a,b)
-        raise ValueError if b<=0 or b==1 or a<=0
+        raise ValueError if b<=0 or b==1 or a<=0 else math.log(a,b)
     except ValueError:
         print("Error")
 def exp(a:float, b:float):
     return a**b
 
-git add calculator.py
+
 #git commit -m "modified calculator p1"
 #git push
        # configure to merge changes
-git pull
 
 
 # First example
