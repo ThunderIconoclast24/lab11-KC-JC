@@ -16,37 +16,28 @@ def square_root(a):
         if a<0:
             raise ValueError
     except ValueError:
-        raise
+        print("Error")
 def hypotenuse(a,b):
-    try:
-        if a==0 or b==0:
-            raise ValueError
-        return math.hypot(a,b)
-    except ValueError:
-        raise
+    return math.hypot(a,b)
 
 
 def add(a:float, b:float):
     return a + b
-def subtract(a:float, b:float):
+def sub(a:float, b:float):
     return a - b
 def mul(a:float, b:float):
     return a * b
 def div(a:float, b:float):
     try:
-        if a == 0:
-            raise ZeroDivisionError
-        return a/b
-    except ZeroDivisionError:
-        raise
-def logarithm(a:float, b:float):
-    try:
-        if b <= 0 or a <= 0 or b==1:
-            raise ValueError
-        return math.log(a,b)
-    except ValueError:
-        raise
 
+        raise ZeroDivisionError if a == 0 else b / a
+    except ZeroDivisionError:
+        print("Error")
+def log(a:float, b:float):
+    try:
+        raise ValueError if b<=0 or b==1 or a<=0 else math.log(a,b)
+    except ValueError:
+        print("Error")
 def exp(a:float, b:float):
     return a**b
 
@@ -57,11 +48,10 @@ def exp(a:float, b:float):
 
 
 # First example
-#def add(a, b): a+b
-#def subtract(a, b): a-b
-#def multiply(a, b): a*b
+def add(a, b): a+b
+def subtract(a, b): a-b
+def multiply(a, b): a*b
 
 
-#def logarithm(a,b):raise ValueError if b<=0 or b==1 or a<=0 else math.log(a,b)
-#def exponent(a,b):a**b
-
+def logarithm(a,b):raise ValueError if b<=0 or b==1 or a<=0 else math.log(a,b)
+def exponent(a,b):a**b
